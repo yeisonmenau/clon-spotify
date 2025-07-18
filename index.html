@@ -3,99 +3,388 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'spotify-green': '#1db954',
+                        'spotify-black': '#191414',
+                        'spotify-dark': '#121212',
+                        'spotify-gray': '#282828',
+                        'spotify-light-gray': '#b3b3b3'
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                        '26': '6.5rem',
+                        '70': '17.5rem',
+                        '147': '36.75rem',
+                        '180': '45rem'
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="https://static-00.iconduck.com/assets.00/spotify-icon-2048x2048-n3imyp8e.png">
     <title>Spotify</title>
 </head>
-<body>
-    <div class="bg-gray-950 w-screen h-screen">
-        <div class="principal w-screen flex">
-            <aside class="w-70 pl-3 bg-gray-950">
-                <article class="h-60 flex flex-col">
-                   <article class="h-40 flex flex-col justify-around ">
-                        <article class="flex items-center gap-3">
-                            <i class="fa-solid fa-house text-white fa-2x"></i>
-                            <p class="text-white">Home</p>
-                        </article>
-                        <article class="flex items-center  gap-4">
-                            <i class="fa-solid fa-magnifying-glass text-white fa-2x"></i>
-                            <p class="text-white">Search</p>
-                        </article>
-                        <article class="flex items-center  gap-6">
-                            <i class="fa-regular fa-bookmark text-white fa-2x"></i>
-                            <p class="text-white">Your library</p>
-                        </article>
-                   </article>
-                   <article>
-                        <article class="flex items-center gap-5 pt-10">
-                            <i class="fa-regular fa-square-plus text-white fa-2x"></i>
-                            <p class="text-white">Create Playlist</p>
-                        </article>
-                        <article class="flex items-center gap-4 ">
-                            <i class="fas fa-heart text-white fa-2x pt-3"></i> 
-                            <p class="text-white">Liked Songs</p>
-                        </article>
-                   </article>
-                </article>
-                <article class="pt-6">
-                    <p class="text-white">Vibesss Only</p>
-                    <p class="text-white">San Francisco</p>
-                    <p class="text-white">Happyyyy</p>
-                    <p class="text-white">Soulful R&B Hits 🎤💔</p>
-                    <p class="text-white">Throwback 90s Bangers 🕺🎉</p>
-                    <p class="text-white">Acoustic Covers 🎸🎤</p>
-                    <p class="text-white">EDM Bangers 🔥🎧</p>
-                    <p class="text-white">Pop Hits of Today 🎤🔝</p>
-                    <p class="text-white">Rainy Days ☔🎶</p>
-                    <p class="text-white">80s Pop Hits 🕺🎤</p>
-                    <p class="text-white">Road Trip 🚗🎶</p>
-                    <p class="text-white">Dinner Party 🍽️🎶</p>
-                    <p class="text-white">Summer Hits 🌞🎶</p>                    
-                </article>
-            </aside>
-            <section class="bg-gray-800 w-screen h-147">
-
-            </section>
-        </div>
-        <footer class="reproductor bg-gray-900 w-screen flex justify-between items-center" >
-            <div class="cancion w-80 h-26 flex justify-around items-center">
-                <div>
-                    <img class="object-contain w-18 h-18" src="https://cdn-images.dzcdn.net/images/cover/81063a1987f09bbe39e7db3f3679893e/0x1900-000000-80-0-0.jpg" alt="">
-                </div>
-                <div>
-                    <p class="text-white font-mono">Guia para la acción</p>
-                    <p class="text-white font-mono text-xs font-thin">Canserbero</p>
-                </div>
-                <div>
-                    <i class="fas fa-heart text-white"></i>
-                </div>
-                
-            </div>
-            <div class="control w-180 h-26 flex flex-col justify-center gap-10">
-                <div class="flex justify-center gap-10">
-                    <i class="fa-solid fa-2x fa-shuffle text-white"></i>
-                    <i class="fa-solid fa-2x fa-backward-step text-white"></i>
-                    <i class="fa-solid fa-2x fa-circle-play text-white"></i>
-                    <i class="fa-solid fa-2x fa-forward-step text-white"></i>
-                    <i class="fa-solid fa-2x fa-repeat text-white"></i>
-                </div>
-                <div>
-                    <div class="w-full h-2 bg-gray-700 rounded-full">
-                        <div class="h-2 bg-green-500 rounded-full" style="width: 60%;"></div>
+<body class="bg-spotify-black overflow-hidden">
+    <div class="w-screen h-screen flex flex-col">
+        <!-- Main Content Area -->
+        <div class="flex flex-1">
+            <!-- Sidebar -->
+            <aside class="w-70 bg-spotify-black p-6 flex flex-col">
+                <!-- Logo -->
+                <div class="mb-8">
+                    <div class="flex items-center gap-2">
+                        <i class="fab fa-spotify text-3xl text-white"></i>
+                        <span class="text-white text-xl font-bold">Spotify</span>
                     </div>
                 </div>
-            </div>
-            <div class="volumen w-80 h-26 flex gap-3 justify-center items-center">
-                <i class="fa-solid fa-bars text-white"></i>
-                <i class="fa-solid fa-laptop text-white"></i>
-                <i class="fa-solid fa-volume-low text-white"></i>
-                <div class="h-2 w-40 bg-white rounded-full"></div>
-                <i class="fa-solid fa-1x fa-up-right-and-down-left-from-center text-white"></i>
+
+                <!-- Navigation -->
+                <nav class="mb-8">
+                    <div class="space-y-4">
+                        <a href="#" class="flex items-center gap-4 text-white hover:text-spotify-green transition-colors">
+                            <i class="fa-solid fa-house text-xl w-6"></i>
+                            <span class="font-medium">Home</span>
+                        </a>
+                        <a href="#" class="flex items-center gap-4 text-spotify-light-gray hover:text-white transition-colors">
+                            <i class="fa-solid fa-magnifying-glass text-xl w-6"></i>
+                            <span class="font-medium">Search</span>
+                        </a>
+                        <a href="#" class="flex items-center gap-4 text-spotify-light-gray hover:text-white transition-colors">
+                            <i class="fa-regular fa-bookmark text-xl w-6"></i>
+                            <span class="font-medium">Your Library</span>
+                        </a>
+                    </div>
+                </nav>
+
+                <!-- Create Playlist -->
+                <div class="mb-6">
+                    <div class="space-y-4">
+                        <a href="#" class="flex items-center gap-4 text-spotify-light-gray hover:text-white transition-colors">
+                            <i class="fa-regular fa-square-plus text-xl w-6"></i>
+                            <span class="font-medium">Create Playlist</span>
+                        </a>
+                        <a href="#" class="flex items-center gap-4 text-spotify-light-gray hover:text-white transition-colors">
+                            <i class="fas fa-heart text-xl w-6 text-purple-500"></i>
+                            <span class="font-medium">Liked Songs</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Playlists -->
+                <div class="flex-1 overflow-y-auto">
+                    <div class="space-y-2 text-sm">
+                        <p class="text-spotify-light-gray hover:text-white cursor-pointer py-1">Vibesss Only</p>
+                        <p class="text-spotify-light-gray hover:text-white cursor-pointer py-1">San Francisco</p>
+                        <p class="text-spotify-light-gray hover:text-white cursor-pointer py-1">Happyyyy</p>
+                        <p class="text-spotify-light-gray hover:text-white cursor-pointer py-1">Soulful R&B Hits 🎤💔</p>
+                        <p class="text-spotify-light-gray hover:text-white cursor-pointer py-1">Throwback 90s Bangers 🕺🎉</p>
+                        <p class="text-spotify-light-gray hover:text-white cursor-pointer py-1">Acoustic Covers 🎸🎤</p>
+                        <p class="text-spotify-light-gray hover:text-white cursor-pointer py-1">EDM Bangers 🔥🎧</p>
+                        <p class="text-spotify-light-gray hover:text-white cursor-pointer py-1">Pop Hits of Today 🎤🔝</p>
+                        <p class="text-spotify-light-gray hover:text-white cursor-pointer py-1">Rainy Days ☔🎶</p>
+                        <p class="text-spotify-light-gray hover:text-white cursor-pointer py-1">80s Pop Hits 🕺🎤</p>
+                        <p class="text-spotify-light-gray hover:text-white cursor-pointer py-1">Road Trip 🚗🎶</p>
+                        <p class="text-spotify-light-gray hover:text-white cursor-pointer py-1">Dinner Party 🍽️🎶</p>
+                        <p class="text-spotify-light-gray hover:text-white cursor-pointer py-1">Summer Hits 🌞🎶</p>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="flex-1 bg-gradient-to-b from-spotify-gray to-spotify-dark overflow-y-auto">
+                <!-- Top Navigation -->
+                <header class="sticky top-0 bg-spotify-black bg-opacity-90 backdrop-blur-sm z-10 p-4">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <button class="w-8 h-8 bg-spotify-black bg-opacity-70 rounded-full flex items-center justify-center hover:bg-opacity-90">
+                                <i class="fas fa-chevron-left text-spotify-light-gray"></i>
+                            </button>
+                            <button class="w-8 h-8 bg-spotify-black bg-opacity-70 rounded-full flex items-center justify-center hover:bg-opacity-90">
+                                <i class="fas fa-chevron-right text-spotify-light-gray"></i>
+                            </button>
+                        </div>
+
+                        <div class="flex-1 max-w-md mx-8">
+                            <div class="relative">
+                                <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                                <input type="text" placeholder="¿Qué quieres reproducir?" 
+                                       class="w-full pl-10 pr-4 py-2 bg-white text-black rounded-full text-sm focus:outline-none">
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <button class="text-spotify-light-gray hover:text-white text-sm font-medium">
+                                <i class="fas fa-download mr-2"></i>Instalar app
+                            </button>
+                            <button class="text-spotify-light-gray hover:text-white">
+                                <i class="fas fa-bell"></i>
+                            </button>
+                            <button class="w-8 h-8 bg-spotify-gray rounded-full flex items-center justify-center">
+                                <i class="fas fa-user text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Content -->
+                <div class="p-6">
+                    <!-- Filter Pills -->
+                    <div class="flex gap-2 mb-6">
+                        <button class="px-4 py-2 bg-white text-black rounded-full text-sm font-medium">Todo</button>
+                        <button class="px-4 py-2 bg-spotify-gray text-white rounded-full text-sm font-medium hover:bg-opacity-80">Música</button>
+                        <button class="px-4 py-2 bg-spotify-gray text-white rounded-full text-sm font-medium hover:bg-opacity-80">Podcasts</button>
+                    </div>
+
+                    <!-- Recently Played -->
+                    <section class="mb-8">
+                        <h2 class="text-2xl font-bold text-white mb-4">Escuchado recientemente</h2>
+                        <div class="grid grid-cols-3 gap-4">
+                            <div class="flex items-center bg-spotify-gray bg-opacity-50 rounded-md overflow-hidden hover:bg-opacity-70 cursor-pointer group">
+                                <img src="https://i.pinimg.com/originals/2b/7c/f8/2b7cf88da103248a1bc8f8515065b9d1.jpg" alt="Canserbero" class="w-16 h-16 object-cover">
+                                <span class="ml-4 text-white font-medium">Canserbero - Guía para la acción</span>
+                                <i class="fas fa-play ml-auto mr-4 text-white opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                            </div>
+                            <div class="flex items-center bg-spotify-gray bg-opacity-50 rounded-md overflow-hidden hover:bg-opacity-70 cursor-pointer group">
+                                <img src="https://yt3.ggpht.com/CssTeH8GT9dX9PkO48M9gTCBAlwQkaW6ftFM_lec8StQ5ZdauSGfQralPk_mjswmAgfAS1aQ1g=s1200" alt="Artist" class="w-16 h-16 object-cover">
+                                <span class="ml-4 text-white font-medium">Hip Hop Classics</span>
+                                <i class="fas fa-play ml-auto mr-4 text-white opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                            </div>
+                            <div class="flex items-center bg-spotify-gray bg-opacity-50 rounded-md overflow-hidden hover:bg-opacity-70 cursor-pointer group">
+                                <img src="https://yt3.ggpht.com/Z4mPl-gx_hwEnCuQ2D9ezqSW4G4gl2k1Dw4N86MlHEbqCQKp_pK0cEG7vEVjf71-r6EihABfeZE=s1200" alt="Reggaeton" class="w-16 h-16 object-cover">
+                                <span class="ml-4 text-white font-medium">Reggaeton Hits</span>
+                                <i class="fas fa-play ml-auto mr-4 text-white opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                            </div>
+                            <div class="flex items-center bg-spotify-gray bg-opacity-50 rounded-md overflow-hidden hover:bg-opacity-70 cursor-pointer group">
+                                <img src="https://pbs.twimg.com/media/Ei-eyXqU8AEAZd6.jpg" alt="Latin Music" class="w-16 h-16 object-cover">
+                                <span class="ml-4 text-white font-medium">Latin Vibes</span>
+                                <i class="fas fa-play ml-auto mr-4 text-white opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                            </div>
+                            <div class="flex items-center bg-spotify-gray bg-opacity-50 rounded-md overflow-hidden hover:bg-opacity-70 cursor-pointer group">
+                                <img src="https://i.pinimg.com/originals/2b/7c/f8/2b7cf88da103248a1bc8f8515065b9d1.jpg" alt="Rap Nacional" class="w-16 h-16 object-cover">
+                                <span class="ml-4 text-white font-medium">Rap Nacional</span>
+                                <i class="fas fa-play ml-auto mr-4 text-white opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                            </div>
+                            <div class="flex items-center bg-spotify-gray bg-opacity-50 rounded-md overflow-hidden hover:bg-opacity-70 cursor-pointer group">
+                                <img src="https://yt3.ggpht.com/CssTeH8GT9dX9PkO48M9gTCBAlwQkaW6ftFM_lec8StQ5ZdauSGfQralPk_mjswmAgfAS1aQ1g=s1200" alt="Underground" class="w-16 h-16 object-cover">
+                                <span class="ml-4 text-white font-medium">Underground Classics</span>
+                                <i class="fas fa-play ml-auto mr-4 text-white opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Made For You -->
+                    <section class="mb-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <h2 class="text-2xl font-bold text-white">Hecho para ti</h2>
+                            <button class="text-spotify-light-gray hover:text-white text-sm font-medium">Mostrar todos</button>
+                        </div>
+                        <div class="grid grid-cols-5 gap-6">
+                            <div class="bg-spotify-gray bg-opacity-30 p-4 rounded-lg hover:bg-opacity-50 cursor-pointer transition-all group relative">
+                                <div class="relative mb-4">
+                                    <img src="https://i.pinimg.com/originals/2b/7c/f8/2b7cf88da103248a1bc8f8515065b9d1.jpg" alt="Mix diario 1" class="w-full aspect-square rounded-lg object-cover">
+                                    <button class="absolute bottom-2 right-2 w-12 h-12 bg-spotify-green rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-lg hover:scale-105">
+                                        <i class="fas fa-play text-black ml-1"></i>
+                                    </button>
+                                </div>
+                                <h3 class="text-white font-medium mb-2">Mix diario 1</h3>
+                                <p class="text-spotify-light-gray text-sm">Canserbero, Lil Supa, Apache y más</p>
+                            </div>
+                            
+                            <div class="bg-spotify-gray bg-opacity-30 p-4 rounded-lg hover:bg-opacity-50 cursor-pointer transition-all group relative">
+                                <div class="relative mb-4">
+                                    <img src="https://yt3.ggpht.com/CssTeH8GT9dX9PkO48M9gTCBAlwQkaW6ftFM_lec8StQ5ZdauSGfQralPk_mjswmAgfAS1aQ1g=s1200" alt="Mix diario 2" class="w-full aspect-square rounded-lg object-cover">
+                                    <button class="absolute bottom-2 right-2 w-12 h-12 bg-spotify-green rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-lg hover:scale-105">
+                                        <i class="fas fa-play text-black ml-1"></i>
+                                    </button>
+                                </div>
+                                <h3 class="text-white font-medium mb-2">Mix diario 2</h3>
+                                <p class="text-spotify-light-gray text-sm">Hip Hop clásico y underground</p>
+                            </div>
+                            
+                            <div class="bg-spotify-gray bg-opacity-30 p-4 rounded-lg hover:bg-opacity-50 cursor-pointer transition-all group relative">
+                                <div class="relative mb-4">
+                                    <img src="https://yt3.ggpht.com/Z4mPl-gx_hwEnCuQ2D9ezqSW4G4gl2k1Dw4N86MlHEbqCQKp_pK0cEG7vEVjf71-r6EihABfeZE=s1200" alt="Mix diario 3" class="w-full aspect-square rounded-lg object-cover">
+                                    <button class="absolute bottom-2 right-2 w-12 h-12 bg-spotify-green rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-lg hover:scale-105">
+                                        <i class="fas fa-play text-black ml-1"></i>
+                                    </button>
+                                </div>
+                                <h3 class="text-white font-medium mb-2">Mix diario 3</h3>
+                                <p class="text-spotify-light-gray text-sm">Reggaeton y música urbana</p>
+                            </div>
+                            
+                            <div class="bg-spotify-gray bg-opacity-30 p-4 rounded-lg hover:bg-opacity-50 cursor-pointer transition-all group relative">
+                                <div class="relative mb-4">
+                                    <img src="https://pbs.twimg.com/media/Ei-eyXqU8AEAZd6.jpg" alt="Mix diario 4" class="w-full aspect-square rounded-lg object-cover">
+                                    <button class="absolute bottom-2 right-2 w-12 h-12 bg-spotify-green rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-lg hover:scale-105">
+                                        <i class="fas fa-play text-black ml-1"></i>
+                                    </button>
+                                </div>
+                                <h3 class="text-white font-medium mb-2">Mix diario 4</h3>
+                                <p class="text-spotify-light-gray text-sm">Música latina y tropical</p>
+                            </div>
+                            
+                            <div class="bg-spotify-gray bg-opacity-30 p-4 rounded-lg hover:bg-opacity-50 cursor-pointer transition-all group relative">
+                                <div class="relative mb-4">
+                                    <img src="https://i.pinimg.com/originals/2b/7c/f8/2b7cf88da103248a1bc8f8515065b9d1.jpg" alt="Mix diario 5" class="w-full aspect-square rounded-lg object-cover">
+                                    <button class="absolute bottom-2 right-2 w-12 h-12 bg-spotify-green rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-lg hover:scale-105">
+                                        <i class="fas fa-play text-black ml-1"></i>
+                                    </button>
+                                </div>
+                                <h3 class="text-white font-medium mb-2">Mix diario 5</h3>
+                                <p class="text-spotify-light-gray text-sm">Rap consciente y poesía urbana</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Popular Artists -->
+                    <section class="mb-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <h2 class="text-2xl font-bold text-white">Artistas populares</h2>
+                            <button class="text-spotify-light-gray hover:text-white text-sm font-medium">Mostrar todos</button>
+                        </div>
+                        <div class="grid grid-cols-5 gap-6">
+                            <div class="bg-spotify-gray bg-opacity-30 p-4 rounded-lg hover:bg-opacity-50 cursor-pointer transition-all group">
+                                <div class="relative mb-4">
+                                    <img src="https://i.pinimg.com/originals/2b/7c/f8/2b7cf88da103248a1bc8f8515065b9d1.jpg" alt="Canserbero" class="w-full aspect-square rounded-full object-cover">
+                                    <button class="absolute bottom-2 right-2 w-12 h-12 bg-spotify-green rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-lg hover:scale-105">
+                                        <i class="fas fa-play text-black ml-1"></i>
+                                    </button>
+                                </div>
+                                <h3 class="text-white font-medium mb-2">Canserbero</h3>
+                                <p class="text-spotify-light-gray text-sm">Artista</p>
+                            </div>
+                            
+                            <div class="bg-spotify-gray bg-opacity-30 p-4 rounded-lg hover:bg-opacity-50 cursor-pointer transition-all group">
+                                <div class="relative mb-4">
+                                    <img src="https://yt3.ggpht.com/CssTeH8GT9dX9PkO48M9gTCBAlwQkaW6ftFM_lec8StQ5ZdauSGfQralPk_mjswmAgfAS1aQ1g=s1200" alt="Hip Hop Artist" class="w-full aspect-square rounded-full object-cover">
+                                    <button class="absolute bottom-2 right-2 w-12 h-12 bg-spotify-green rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-lg hover:scale-105">
+                                        <i class="fas fa-play text-black ml-1"></i>
+                                    </button>
+                                </div>
+                                <h3 class="text-white font-medium mb-2">Lil Supa</h3>
+                                <p class="text-spotify-light-gray text-sm">Artista</p>
+                            </div>
+                            
+                            <div class="bg-spotify-gray bg-opacity-30 p-4 rounded-lg hover:bg-opacity-50 cursor-pointer transition-all group">
+                                <div class="relative mb-4">
+                                    <img src="https://yt3.ggpht.com/Z4mPl-gx_hwEnCuQ2D9ezqSW4G4gl2k1Dw4N86MlHEbqCQKp_pK0cEG7vEVjf71-r6EihABfeZE=s1200" alt="Reggaeton Artist" class="w-full aspect-square rounded-full object-cover">
+                                    <button class="absolute bottom-2 right-2 w-12 h-12 bg-spotify-green rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-lg hover:scale-105">
+                                        <i class="fas fa-play text-black ml-1"></i>
+                                    </button>
+                                </div>
+                                <h3 class="text-white font-medium mb-2">Bad Bunny</h3>
+                                <p class="text-spotify-light-gray text-sm">Artista</p>
+                            </div>
+                            
+                            <div class="bg-spotify-gray bg-opacity-30 p-4 rounded-lg hover:bg-opacity-50 cursor-pointer transition-all group">
+                                <div class="relative mb-4">
+                                    <img src="https://pbs.twimg.com/media/Ei-eyXqU8AEAZd6.jpg" alt="Latin Artist" class="w-full aspect-square rounded-full object-cover">
+                                    <button class="absolute bottom-2 right-2 w-12 h-12 bg-spotify-green rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-lg hover:scale-105">
+                                        <i class="fas fa-play text-black ml-1"></i>
+                                    </button>
+                                </div>
+                                <h3 class="text-white font-medium mb-2">J Balvin</h3>
+                                <p class="text-spotify-light-gray text-sm">Artista</p>
+                            </div>
+                            
+                            <div class="bg-spotify-gray bg-opacity-30 p-4 rounded-lg hover:bg-opacity-50 cursor-pointer transition-all group">
+                                <div class="relative mb-4">
+                                    <img src="https://i.pinimg.com/originals/2b/7c/f8/2b7cf88da103248a1bc8f8515065b9d1.jpg" alt="Rap Artist" class="w-full aspect-square rounded-full object-cover">
+                                    <button class="absolute bottom-2 right-2 w-12 h-12 bg-spotify-green rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-lg hover:scale-105">
+                                        <i class="fas fa-play text-black ml-1"></i>
+                                    </button>
+                                </div>
+                                <h3 class="text-white font-medium mb-2">Apache</h3>
+                                <p class="text-spotify-light-gray text-sm">Artista</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </main>
+        </div>
+
+        <!-- Bottom Player -->
+        <footer class="bg-spotify-gray border-t border-spotify-black p-4">
+            <div class="flex items-center justify-between">
+                <!-- Currently Playing -->
+                <div class="flex items-center gap-4 w-1/4">
+                    <img src="https://i.pinimg.com/originals/2b/7c/f8/2b7cf88da103248a1bc8f8515065b9d1.jpg" alt="Guía para la acción" class="w-14 h-14 rounded object-cover">
+                    <div>
+                        <p class="text-white font-medium text-sm hover:underline cursor-pointer">Guía para la acción</p>
+                        <p class="text-spotify-light-gray text-xs hover:underline cursor-pointer">Canserbero</p>
+                    </div>
+                    <button class="text-spotify-light-gray hover:text-white ml-4">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                    <button class="text-spotify-light-gray hover:text-white">
+                        <i class="fas fa-external-link-alt"></i>
+                    </button>
+                </div>
+
+                <!-- Player Controls -->
+                <div class="flex flex-col items-center w-1/2">
+                    <div class="flex items-center gap-6 mb-2">
+                        <button class="text-spotify-light-gray hover:text-white transition-colors">
+                            <i class="fa-solid fa-shuffle"></i>
+                        </button>
+                        <button class="text-spotify-light-gray hover:text-white transition-colors">
+                            <i class="fa-solid fa-backward-step text-xl"></i>
+                        </button>
+                        <button class="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:scale-105 transition-transform">
+                            <i class="fa-solid fa-pause text-black"></i>
+                        </button>
+                        <button class="text-spotify-light-gray hover:text-white transition-colors">
+                            <i class="fa-solid fa-forward-step text-xl"></i>
+                        </button>
+                        <button class="text-spotify-light-gray hover:text-white transition-colors">
+                            <i class="fa-solid fa-repeat"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Progress Bar -->
+                    <div class="flex items-center gap-2 w-full max-w-md">
+                        <span class="text-xs text-spotify-light-gray">1:23</span>
+                        <div class="flex-1 bg-spotify-light-gray bg-opacity-30 rounded-full h-1 cursor-pointer group">
+                            <div class="bg-white rounded-full h-1 relative transition-all" style="width: 35%;">
+                                <div class="absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full opacity-0 group-hover:opacity-100"></div>
+                            </div>
+                        </div>
+                        <span class="text-xs text-spotify-light-gray">3:47</span>
+                    </div>
+                </div>
+
+                <!-- Volume and Options -->
+                <div class="flex items-center gap-4 w-1/4 justify-end">
+                    <button class="text-spotify-light-gray hover:text-white">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <button class="text-spotify-light-gray hover:text-white">
+                        <i class="fa-solid fa-laptop"></i>
+                    </button>
+                    <div class="flex items-center gap-2">
+                        <button class="text-spotify-light-gray hover:text-white">
+                            <i class="fa-solid fa-volume-up"></i>
+                        </button>
+                        <div class="w-20 bg-spotify-light-gray bg-opacity-30 rounded-full h-1 cursor-pointer group">
+                            <div class="bg-white rounded-full h-1 relative" style="width: 70%;">
+                                <div class="absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full opacity-0 group-hover:opacity-100"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="text-spotify-light-gray hover:text-white">
+                        <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                    </button>
+                </div>
             </div>
         </footer>
     </div>
+
     <script src="app.js"></script>
 </body>
 </html>
